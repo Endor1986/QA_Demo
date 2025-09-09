@@ -1,4 +1,4 @@
-# QA Demo Backend
+QA Demo Backend
 
 Ein kleines Node/Express-Projekt mit absichtlich eingebauten Bugs, das den gesamten QA-Prozess demonstriert:  
 Von der Fehlererkennung über automatisierte Tests bis hin zur Dokumentation und Behebung.  
@@ -13,8 +13,9 @@ Von der Fehlererkennung über automatisierte Tests bis hin zur Dokumentation und
 cd app/backend
 npm install
 npm test
+```
 
-📂 Projektstruktur
+📂 Projektstruktur 
 
 
 app/
@@ -42,7 +43,7 @@ app/
 | B4 | Contract    | API sendet `error` statt `message`    | Niedrig | ✔️ Gefixt | T-Contract |
 | B5 | Lager       | Keine harte Bestandsprüfung im Server | Hoch    | ✔️ Gefixt | T-Stock    |
 
-📜 Changelog
+📜 Changelog 
 
 | Version | Datum   | Änderungen                                                  |
 | ------- | ------- | ----------------------------------------------------------- |
