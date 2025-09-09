@@ -16,7 +16,21 @@ npm test
 ```
 
 📂 Projektstruktur 
-
+```text
+app/
+├── backend/
+│   ├── package.json
+│   ├── src/
+│   │   ├── server.js
+│   │   ├── price.js
+│   │   └── validators.js
+│   └── test/
+│       ├── price.test.js
+│       ├── validators.test.js
+│       └── orders.api.test.js
+└── docs/
+    ├── testplan.md
+    └── bugreport.md
 
 app/
 ├── backend/
