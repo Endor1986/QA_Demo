@@ -1,0 +1,27 @@
+# === unbedingt ignorieren ===
+
+# Node modules (riesig, wird aus package.json generiert)
+node_modules/
+
+# Lockfiles (kannst du drinlassen, aber wenn du lieber sauberes Repo willst)
+package-lock.json
+
+# Test-Coverage (Jest)
+coverage/
+.nyc_output/
+
+# Playwright Reports (später für E2E-Tests)
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Logs
+*.log
+
+# OS-Dateien
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/

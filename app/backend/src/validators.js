@@ -1,7 +1,7 @@
 
 export function isValidZip(zip) {
-  // BUG: akzeptiert 4–7 statt exakt 5
-  return typeof zip === "string" && zip.length >= 4 && zip.length <= 7 && /^\d+$/.test(zip);
+    // ✅ Fix: erlaubt nur noch exakt 5-stellige Postleitzahlen (DE-Format)
+    return typeof zip === "string" && /^\d{5}$/.test(zip)
 }
 
 export function isValidPassword(pw) {
@@ -10,6 +10,6 @@ export function isValidPassword(pw) {
 }
 
 export function isValidQty(qty) {
-  // BUG: off-by-one – erlaubt 11 statt max 10
-  return Number.isInteger(qty) && qty >= 1 && qty <= 11;
+   // ✅ Fix: Menge nur 1..10
+    return Number.isInteger(qty) && qty >= 1 && qty <= 10;
 }
