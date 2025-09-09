@@ -1,34 +1,56 @@
-##### \# QA Demo Testing
+# QA Demo – Backend + Tests (Starter)
 
-##### 
+Dieses Starterpaket zeigt, wie man ein kleines API-Backend mit **bewusst eingebauten Bugs** erstellt und diese mit **Unit-, API- und (später) E2E-Tests** aufdeckt.
 
-##### Dieses Projekt demonstriert klassische \*\*Software-Testverfahren\*\* an einer bewusst fehlerhaften Bestell-API.  
+## Ziel
+Dieses Projekt soll zeigen, wie man systematisch Testverfahren (Black-Box, Grenzwertanalyse, White-Box, Regression) 
+in einem kleinen Node/Express-Projekt anwendet und dokumentiert. 
+Die Fehler sind **bewusst eingebaut**, um den Wert von Tests sichtbar zu machen.
 
-##### Ziel ist es, Bugs mit Unit-, API- und (später) E2E-Tests aufzudecken, systematisch zu dokumentieren und durch Regression abzusichern.
+## Inhalt
+- Express-API mit Endpunkt `POST /orders`
+- Bugs in Preisberechnung (Float), Validierung (PLZ, Menge), Contract-Mismatch
+- Jest + Supertest Tests, die die Bugs sichtbar machen
 
-##### 
+## Quickstart
 
-##### \## Features
+CMD
+cd app/backend
+npm install
+npm test
+npm run dev  # startet die API auf http://localhost:3001
 
-##### \- Node.js / Express API (Bestellungen)
+## Struktur:
 
-##### \- Absichtlich eingebaute Fehler (Rundung, Validierung, Contract, Lagerprüfung)
+qa-demo/
+├── app/
+│   └── backend/         # Testbereich        
+├── docs/
+│   ├── teststrategie.md # Strategie
+│   ├── testplan.md      # Plan
+│   ├── testcases.md     # Matrix
+│   ├── buglog.md        # Fehlerliste
+│   ├── reporting.md     # Tages-/Abschlussberichte
+│   ├── pdf/             # alles für das PDF
+│   │   ├── qa-demo-report.md   # Hauptdokument (Markdown)
+│   │   ├── images/             # Screenshots
+│   │   │   ├── npm-test.png
+│   │   │   ├── curl-zip-bug.png
+│   │   │   ├── curl-qty-bug.png
+│   │   │   └── curl-stock-bug.png
+│   │   └── export/             # hier speicherst du das fertige PDF
+│   │       └── qa-demo-report.pdf
+└── README.md
 
-##### \- Jest + Supertest Tests (Unit + API)
+## Testbereich:
 
-##### \- Dokumentation: Teststrategie, Testplan, Testfälle, Buglog
-
-##### \- CI-Pipeline mit GitHub Actions
-
-##### 
-
-##### \## Lernziele
-
-##### \- Anwendung von Testverfahren (Black-Box, Grenzwertanalyse, White-Box, Regression, Exploratives Testen)
-
-##### \- Risiko-basiertes Testdesign
-
-##### \- Transparente Dokumentation (Traceability, Buglog, Reports)
-
-##### 
-
+app/backend/
+├── package.json
+├── src/
+│   ├── server.js
+│   ├── price.js
+│   └── validators.js
+└── test/
+    ├── price.test.js
+    ├── validators.test.js
+    └── orders.api.test.js
